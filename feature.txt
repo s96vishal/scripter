@@ -1,27 +1,15 @@
 Feature: Tosca vehicle insurance Testing
 
 Scenario: Visit the sample application website and select automobile page
-Given I visit tosca sample app website
-When I click on automobile tab
-Then I should see Enter Vehicle Data page
+Given I open google website
+When I click automobile tab
+Then I should see Vehicle Data page
 
 Scenario:Enter Vehicle data and click next
-When I enter details and click next
-Then I should see Insurant Data page
+When I enter vehicle data and click next
+Then I should see insurant Data page
 
-Scenario:Enter Insurant data and click next
+Scenario:Enter insurant data and Click next
 When I enter insurant data and click next
-Then I should see Product Data page
+Then I should see product Data page
 
-Scenario:Enter Product data and Click next
-When I enter product data and click next
-Then I should see price options
-
-Scenario:Select Pricing Option and click next
-When I select pricing option and click next
-Then I should see
-
-Scenario:Enter Send quote data and click send
-When I enter send quote data adn click send
-Then I should see sent
-    

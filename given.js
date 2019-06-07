@@ -1,19 +1,39 @@
-arr=['visit','login','open'];
-textline="visit tosca Application"
-function Given(textline){
-    temparr=textline.split(" ");
+const param=require('./parameter');
 
-    for(x of temparr){
-        if(arr.includes(x)){
-            console.log("true");
+// array for urls keywords 
+url_array=['visit','open'];
+
+module.exports.given=function given(textline){
+    //initial data kept to default 
+    data=`this.When("${textline.trim()}",function () {
+        \/\/ callpack pending();
+        });\n\n`;
+
+    //converting line to lowercase and removing any extra spaces
+    givenline=textline.toLowerCase().trim();
+
+    //textline converted to array :line_array
+    line_array=givenline.split(" ");
+
+        for(var i=0;i<line_array.length;i++)
+        {
+        //checking for visit/open keywords to go to some url
+
+            if(url_array.includes(line_array[i]))
+                {
+                    value=line_array[i+1]+'_url';
+                    data=`this.Given("${textline.trim()}",function () {
+                    return helpers.loadPage('${param[value]}'); 
+                    });\n\n`;
+                break;
+                }
         }
-    }
 
-}
-
-tosca={
-    url:"www.sampleapp.tricentis.com/app1",
+    //finally returning the stored data for given line
+    return data;
 }
 
 
-Given(textline);
+
+
+
