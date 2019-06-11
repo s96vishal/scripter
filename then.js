@@ -25,8 +25,8 @@ module.exports.then=function (textline){
                 if('id' in param[value])
                     {
                         data=`this.Then('${textline.trim()}',function(){
-                    return driver.wait(until.elementsLocated(by.id('${param[value].id}')),10000);
-                    })\n\n`;
+            return driver.wait(until.elementsLocated(by.id('${param[value].id}')),10000);
+            })\n\n`;
                     break;
                     }
        

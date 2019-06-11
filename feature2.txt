@@ -18,4 +18,22 @@ Then I should see
 Scenario:Enter Send quote data and click send
 When I enter send quote data adn click send
 Then I should see sent
-    
+
+
+------------------------------------------------------------------------------------------
+Then I should see Vehicle Data page
+
+Scenario:Enter Vehicle data and click next
+When I enter vehicle data and click next
+Then I should see insurant Data page
+
+Scenario:Enter insurant data and Click next
+When I enter insurant data and click next
+Then I should see product Data page
+
+Scenario:Enter Product data and Click next
+When I enter product data and click next
+Then I should see price options
+
+Scenario:Enter Send quote data and click send
+When I enter sendquote data adn click send

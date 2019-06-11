@@ -1,6 +1,6 @@
 const param=require('./parameter');
 const givenparser=require('./given');
-const whenparser=require('./when');
+const whenparser=require('./dummy');
 const thenparser=require('./then');
 module.exports=function checkline(line){
     var newdata='';

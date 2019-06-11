@@ -17,10 +17,43 @@ module.exports={
         licenseplatenumber:{id:'licenseplatenumber',value:'12345678'},
         annualmileage:{id:'annualmileage',value:'168'},
     },
-    click_next:{id:'nextenterinsurantdata'},
+    click_insurant:{id:'nextenterinsurantdata'},
     verify_insurant:{id:'enterinsurantdata'},
+
+
     enter_insurant:{
-        
+        firstname:{id:'firstname',value:'Insurant'},
+        lastname:{id:'lastname',value:'services'},
+        birthdate:{id:'birthdate',value:'03/25/1995'},
+        gender:{className:'ideal-radio',radio:true,value:''},
+        //classname
+        streetaddress:{id:'streetaddress',value:'hinjewadi pune'},
+        country:{id:'country',value:'India'},
+        zipcode:{id:'zipcode',value:'411057'},
+        city:{id:'city',value:'Pune'},
+        occupation:{id:'occupation',value:'Employee'}
+    },
+    click_product:{id:'nextenterproductdata'},
+    verify_product:{id:'nextenterproductdata'},
+
+    enter_product:{
+        startdate:{id:'startdate',value:'09/05/2019'},
+        insurancesum:{id:'insurancesum',value:'3.000.000,00'},
+        meritrating:{id:'meritrating',value:'Bonus 9'},
+        damageinsurance:{id:'damageinsurance',value:'Partial Coverage'},
+        //xpath pending
+    },
+    click_price:{id:'nextselectpriceoption'},
+    verify_price:{id:'priceTable'},
+
+    enter_sendquote:{
+        email:{id:'email',value:'abc@xyz.com'},
+        phone:{id:'phone',value:'8365698889'},
+        username:{id:'username',value:'s96vishal'},
+        password:{id:'password',value:'Vishal123'},
+        confirmpassword:{id:'confirmpassword',value:'Vishal123'},
+        comments:{id:'Comments',value:'Good website"'},
     }
+
 }
 

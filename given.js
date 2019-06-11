@@ -23,8 +23,8 @@ module.exports.given=function given(textline){
                 {
                     value=line_array[i+1]+'_url';
                     data=`this.Given("${textline.trim()}",function () {
-                    return helpers.loadPage('${param[value]}'); 
-                    });\n\n`;
+            return helpers.loadPage('${param[value]}'); 
+            });\n\n`;
                 break;
                 }
         }
