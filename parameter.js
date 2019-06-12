@@ -1,7 +1,7 @@
 module.exports={
 
     //enter URL's in the form name_url
-    google_url:"www.google.com",
+    tosca_url:"http://sampleapp.tricentis.com/101/",
     // for clicking buttons or text field or anything ,enter in the format click_clickablename
     click_automobile:{id:"nav_automobile"},
     //for verifying the details, enter in the following format verify_name
@@ -31,7 +31,8 @@ module.exports={
         country:{id:'country',value:'India'},
         zipcode:{id:'zipcode',value:'411057'},
         city:{id:'city',value:'Pune'},
-        occupation:{id:'occupation',value:'Employee'}
+        occupation:{id:'occupation',value:'Employee'},
+        hobbies:{className:'ideal-check',checkbox:true}
     },
     click_product:{id:'nextenterproductdata'},
     verify_product:{id:'nextenterproductdata'},
@@ -41,6 +42,8 @@ module.exports={
         insurancesum:{id:'insurancesum',value:'3.000.000,00'},
         meritrating:{id:'meritrating',value:'Bonus 9'},
         damageinsurance:{id:'damageinsurance',value:'Partial Coverage'},
+        courtesycar:{id:'courtesycar',value:'Yes'},
+        optional_products:{xpath:'//*[@id="insurance-form"]/div/section[3]/div[5]/p/label[1]/span',checkbox:true}
         //xpath pending
     },
     click_price:{id:'nextselectpriceoption'},

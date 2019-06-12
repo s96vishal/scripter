@@ -64,7 +64,7 @@ function whenIEnter(line,textline){
                         //check for enter or select keyword
                         if(line_array[i]=='enter')
                         {
-                            value='enter_'+line_array[i+1];
+                            value='enter_'+line_array[i+1]; //to enter the values in particular fields
                         }
                         else if (line_array[i]=='select')
                         {
@@ -74,18 +74,38 @@ function whenIEnter(line,textline){
                         Object.keys(param[value]).forEach((items)=>{
                            //for entering multiple data
                            if(param[value][items].radio==true){
-                               if('className' in param[value][items]){
-                                   data+=`
-            driver.findElement(by.className(${param[value][items].className})).click();\n
-                                   `
-                               }
+                               if('className' in param[value][items])
+                                {
+                                   data+=clickRadioButtonByClassName(param[value][items].className);
+                                }
+                               if('id' in param[value][items])
+                                {
+                                 data+=clickRadioButtonById(param[value][items].id);
+                                }
+                           }
+                           else if (param[value][items].checkbox==true){
+                            if('className' in param[value][items])
+                            {
+                               data+=clickCheckboxByClassName(param[value][items].className);
+                            }
+                           if('id' in param[value][items])
+                            {
+                             data+=clickCheckboxById(param[value][items].id);
+                            }
+                            if('xpath' in param[value][items])
+                            {
+                             data+=clickCheckboxByXpath(param[value][items].xpath);
+                            }
+
                            }
                            else
                            {
-            //                 data+=`
-            // driver.findElement(by.id('${param[value][items].id}')).sendKeys("${param[value][items].value}");`;
-
+                            if('id' in param[value][items]){
                             data+=writeElementById(param[value][items].id,param[value][items].value);
+                            }
+                            if('xpath' in param[value][items]){
+                                data+=writeElementByXpath(param[value][items].xpath,param[value][items].value);
+                            }
                            }
                             
                         })
@@ -99,4 +119,37 @@ function whenIEnter(line,textline){
 function writeElementById(element,value){
     return  `
             driver.findElement(by.id('${element}')).sendKeys("${value}");`;
+}
+function writeElementByClassName(element,value){
+    return  `
+    driver.findElement(by.className('${element}')).sendKeys("${value}");`;
+}
+function writeElementByXpath(element,value){
+    return  `
+    driver.findElement(by.xpath('${element}')).sendKeys("${value}");`;
+}
+
+function clickRadioButtonById(element){
+    return `
+    driver.findElement(by.className(${element})).click();\n`;
+}
+function clickRadioButtonByClassName(element){
+   return `
+   driver.findElement(by.className(${element})).click();\n`;
+}
+
+function clickCheckboxById(element){
+    return `
+    driver.findElement(by.id(${element})).click();
+    `;
+}
+function clickCheckboxByClassName(element){
+    return `
+    driver.findElement(by.className(${element})).click();
+    `;
+}
+function clickCheckboxByXpath(element){
+    return `
+    driver.findElement(by.xpath(${element})).click();
+    `;
 }

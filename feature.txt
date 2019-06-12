@@ -13,6 +13,10 @@ Scenario:Enter insurant data and Click next
 When I enter insurant data and click product
 Then I should see product Data page
 
+Scenario:Enter Product data and Click next
+When I enter product data and click price
+Then I should see price options
+
 Scenario:Enter Send quote data and click send
 When I enter sendquote data
 
